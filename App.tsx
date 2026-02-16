@@ -15,14 +15,18 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const loadBot = () => {
+      // Obscurcissement des URLs pour éviter le copier-coller facile depuis le code source
+      const _a = "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
+      const _b = "https://files.bpcontent.cloud/2026/01/15/00/20260115005427-YWGBVJ4O.js";
+      
       const injectScript = document.createElement('script');
-      injectScript.src = "https://cdn.botpress.cloud/webchat/v3.6/inject.js";
+      injectScript.src = _a;
       injectScript.async = true;
       document.body.appendChild(injectScript);
 
       injectScript.onload = () => {
         const configScript = document.createElement('script');
-        configScript.src = "https://files.bpcontent.cloud/2026/01/15/00/20260115005427-YWGBVJ4O.js";
+        configScript.src = _b;
         configScript.async = true;
         document.body.appendChild(configScript);
       };
@@ -44,11 +48,10 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col relative overflow-x-hidden">
-      {/* Test Page Disclaimer */}
-      <div className="bg-amber-100 text-amber-800 text-center py-2 px-4 text-xs lg:text-sm font-medium border-b border-amber-200">
-        <i className="fas fa-exclamation-triangle mr-2"></i>
-        Ceci est une page de test : NovaSkills Academy est une école fictive.
+    <div className="min-h-screen flex flex-col relative overflow-x-hidden selection:bg-blue-600 selection:text-white">
+      {/* Banner Disclaimer for Fictitious School */}
+      <div className="bg-slate-900 text-white text-center py-2.5 px-4 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] border-b border-white/10 z-[60]">
+        <span className="opacity-70"><i className="fas fa-info-circle mr-2"></i> Page de démonstration — Institut Fictif</span>
       </div>
 
       <Header />
@@ -68,12 +71,12 @@ const App: React.FC = () => {
       {/* Back to top button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-40 bg-blue-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 hover:bg-blue-700 hover:-translate-y-1 ${
-          showBackToTop ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'
+        className={`fixed bottom-8 right-8 z-40 bg-blue-600 text-white p-4 rounded-2xl shadow-2xl transition-all duration-500 hover:bg-blue-700 hover:-translate-y-2 focus:outline-none ${
+          showBackToTop ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-10 scale-50 pointer-events-none'
         }`}
-        aria-label="Back to top"
+        aria-label="Retour en haut"
       >
-        <i className="fas fa-arrow-up text-lg"></i>
+        <i className="fas fa-chevron-up text-lg"></i>
       </button>
     </div>
   );

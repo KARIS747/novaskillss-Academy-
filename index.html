@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>NovaSkills Academy Yaoundé - Formation Professionnelle</title>
+    <meta name="description" content="NovaSkills Academy Yaoundé - Centre de formation d'excellence en informatique au Cameroun (Page de démonstration).">
+    <title>NovaSkills Academy Yaoundé - Excellence Numérique</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -17,25 +18,26 @@
             font-family: 'Outfit', sans-serif;
         }
         .glass-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
         }
         .gradient-text {
             background: linear-gradient(135deg, #2563eb, #7c3aed, #db2777);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .gradient-bg {
-            background: linear-gradient(135deg, #2563eb, #7c3aed);
+        @keyframes float {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
+          100% { transform: translateY(0px); }
         }
-        /* Prevents script copying via simple right-click/view-source on specific sections if needed, 
-           though devtools remain accessible. Minimal client-side protection. */
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
         .no-select {
             -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
             user-select: none;
         }
     </style>
@@ -49,7 +51,7 @@
 }
 </script>
 </head>
-<body class="bg-slate-50 text-slate-900 selection:bg-blue-100 selection:text-blue-700">
+<body class="bg-slate-50 text-slate-900 selection:bg-blue-600 selection:text-white no-select">
     <div id="root"></div>
 </body>
 </html>
